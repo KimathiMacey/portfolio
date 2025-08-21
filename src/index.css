@@ -1,0 +1,374 @@
+/* ===== Layout Base ===== */
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; 
+}
+
+/* ===== Base Styles ===== */
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background: #c2c1c2;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Dark Mode */
+body.dark {
+  background: #1e1e1e;
+  color: #f1f1f1;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  background: rgba(0, 0, 0, 0.85);
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-link {
+  color: white;             
+  text-decoration: none;    
+  font-weight: 600;         
+  transition: color 0.3s;   
+}
+
+.nav-link:hover {
+  color: #fbc2eb;           
+}
+
+/* ===== Hero Section ===== */
+.hero {
+  display: flex;
+  flex-direction: row;   
+  align-items: center;
+  gap: 3.0rem;
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: 1000px;
+}
+
+
+.hero-content {
+  flex: 1;
+}
+
+.hero h2 {
+  font-size: 2.5rem;
+  margin: 0;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  color: #444;
+}
+
+body.dark .hero p {
+  color: #ddd;
+}
+
+/* Profile Image */
+.profile-pic {
+  border-radius: 50%;
+  width: 180px;
+  height: 180px;  
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  object-fit: cover;
+  image-rendering: auto; 
+}
+
+/* ===== Skills Section ===== */
+.skills-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.skills-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+body.dark .skills-title {
+  color: #f2f2f2;
+}
+
+.skills-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); /* flexible rows */
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skill-item {
+  background: #f0efef;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  color: #333;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+body.dark .skill-item {
+  background: #2a2a2a;
+  color: #eee;
+}
+
+/* Generic Section Styling */
+section {
+  background: transparent;   
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  border-bottom: 2px solid rgba(255,255,255,0.2); 
+}
+
+/* Add divider line under each section */
+section:not(:last-of-type) {
+  border-bottom: 2px solid #e6e6e6;
+}
+
+/* Dark mode divider */
+body.dark section:not(:last-of-type) {
+  border-bottom: 2px solid #444;
+}
+
+
+/* ===== Experience Section ===== */
+.experience-section {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.experience-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #222;
+}
+
+body.dark .experience-title {
+  color: #f2f2f2;
+}
+
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.experience-item {
+  background: #f0efef;
+  padding: 1rem 1.2rem;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
+}
+
+.experience-role {
+  font-size: 1.3rem;
+  font-weight: bold;
+  margin: 0 0 0.3rem 0;
+  color: #333;
+}
+
+body.dark .experience-role {
+  color: #f5f5f5;
+}
+
+.experience-desc {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+body.dark .experience-desc {
+  color: #ccc;
+}
+
+/* ===== Hobbies Section ===== */
+.hobbies-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #f0efef;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+body.dark .hobbies-section {
+  background: #1e1e1e;
+}
+
+.hobbies-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+body.dark .hobbies-title {
+  color: #f2f2f2;
+}
+
+.hobbies-text {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+body.dark .hobbies-text {
+  color: #ddd;
+}
+
+/* ===== Projects Section ===== */
+.projects-header {
+  text-align: center;
+  font-size: 2.5rem; 
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: rgb(5, 5, 5); 
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  padding: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  max-width: 1200px;
+  margin: auto;
+}
+
+.project-card {
+  background: #f0efef;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  transition: transform 0.3s, background 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+body.dark .project-card {
+  background: #333;
+  color: #f1f1f1;
+}
+
+/* ===== Contact Form ===== */
+.contact-header {
+  text-align: center;
+  font-size: 2.5rem; 
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: rgb(5, 5, 5); 
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+body.dark .contact-form {
+  background: rgba(40, 40, 40, 0.9);
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Buttons */
+button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  background: #6f68fc;
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #574bdb;
+}
+
+/* ===== Footer Styles ===== */
+.footer {
+  background-color: #1a1a1a; /* dark background */
+  color: #fff;
+  padding: 1.5rem 0;
+  margin-top: 3rem;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.footer-text {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 1.6rem;
+}
+
+.footer-icon-link {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-icon-link:hover {
+  color: #ff6a95; 
+}
+
+
